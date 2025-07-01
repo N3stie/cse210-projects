@@ -6,5 +6,8 @@ class Program
     {
         // This is prep 2
         Console.WriteLine("Hello Sandbox World!!!!!.");
+
+        Console.WriteLine("Hello Sandbox World!!!!!.");
+        Console.WriteLine("This is a sample for my practicing in Git.");
     }
 }
