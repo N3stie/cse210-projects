@@ -1,9 +1,54 @@
 using System;
+using System.Globalization;
+using System.Linq;
+
+
 
 class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the Exercise4 Project.");
+
+        List<int> num = new List<int>();
+        int userInput;
+
+        Console.WriteLine("Enter numbers to add to the List (enter 0 when finished):");
+
+        do
+        {
+            Console.Write("Enter a number: ");
+            userInput = int.Parse(Console.ReadLine());
+
+            if (userInput != 0)
+            {
+                num.Add(userInput);
+            }
+        } while (userInput != 0); // Move while here
+
+        int sum = num.Sum();
+        double average = num.Average();
+        int max = num.Max();
+
+        Console.WriteLine($"The sum is: {sum}");
+        Console.WriteLine($"The average is: {average} ");
+        Console.WriteLine($"The maximum number is: {max}");
+
+        int smallPositive = num
+            .Where(n => n > 0)
+            .DefaultIfEmpty(-1)
+            .Min();
+
+        if (smallPositive > 0)
+        {
+            Console.WriteLine($"The smallest positive number is: {smallPositive}");
+        }
+
+        num.Sort();
+        Console.WriteLine("The sorted numbers are:");
+        foreach (int num2 in num)
+        {
+            Console.WriteLine(num2);
+        }
     }
 }
