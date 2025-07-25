@@ -13,7 +13,7 @@ class Program
         Video video1 = new Video
         {
             title = "How to Learn C#",
-            author = "Bro Coder",
+            author = "BroTheoder",
             lengthInseconds = 600
         };
 
